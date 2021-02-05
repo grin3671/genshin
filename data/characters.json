@@ -1,0 +1,568 @@
+[
+  {
+    "name": "Traveler?type=anemo",
+    "names": {
+      "en": "Traveler",
+      "ru": "Игрок"
+    },
+    "element": "Anemo",
+    "rarity": 5,
+    "avatar": "UI_AvatarIcon_PlayerBoy",
+    "filter": [
+      "element_anemo",
+      "weapon_sword",
+      "monster_003",
+      "local_005",
+      "elite_003"
+    ]
+  },
+  {
+    "name": "Traveler?type=geo",
+    "names": {
+      "en": "Traveler",
+      "ru": "Игрок"
+    },
+    "element": "Geo",
+    "rarity": 5,
+    "avatar": "UI_AvatarIcon_PlayerBoy",
+    "filter": [
+      "element_geo",
+      "weapon_sword",
+      "monster_003",
+      "local_005",
+      "elite_003"
+    ]
+  },
+  {
+    "name": "Amber",
+    "names": {
+      "en": "Amber",
+      "ru": "Эмбер"
+    },
+    "element": "Pyro",
+    "rarity": 4,
+    "avatar": "UI_AvatarIcon_Ambor",
+    "filter": [
+      "element_pyro",
+      "weapon_bow",
+      "monster_004",
+      "local_007",
+      "talent_001",
+      "elite_003"
+    ]
+  },
+  {
+    "name": "Kaeya",
+    "names": {
+      "en": "Kaeya",
+      "ru": "Кэйа"
+    },
+    "element": "Cryo",
+    "rarity": 4,
+    "avatar": "UI_AvatarIcon_Kaeya",
+    "filter": [
+      "element_cryo",
+      "weapon_sword",
+      "monster_011",
+      "local_001",
+      "talent_003",
+      "elite_006"
+    ]
+  },
+  {
+    "name": "Lisa",
+    "names": {
+      "en": "Lisa",
+      "ru": "Лиза"
+    },
+    "element": "Electro",
+    "rarity": 4,
+    "avatar": "UI_AvatarIcon_Lisa",
+    "filter": [
+      "element_electro",
+      "weapon_catalyst",
+      "monster_001",
+      "local_003",
+      "talent_003",
+      "elite_002"
+    ]
+  },
+  {
+    "name": "Barbara",
+    "names": {
+      "en": "Barbara",
+      "ru": "Барбара"
+    },
+    "element": "Hydro",
+    "rarity": 4,
+    "avatar": "UI_AvatarIcon_Barbara",
+    "filter": [
+      "element_hydro",
+      "weapon_catalyst",
+      "monster_003",
+      "local_006",
+      "talent_001",
+      "elite_005"
+    ]
+  },
+  {
+    "name": "Razor",
+    "names": {
+      "en": "Razor",
+      "ru": "Рэйзор"
+    },
+    "element": "Electro",
+    "rarity": 4,
+    "avatar": "UI_AvatarIcon_Razor",
+    "filter": [
+      "element_electro",
+      "weapon_claymore",
+      "monster_002",
+      "local_002",
+      "talent_002",
+      "elite_002"
+    ]
+  },
+  {
+    "name": "Xiangling",
+    "names": {
+      "en": "Xiangling",
+      "ru": "Сян Лин"
+    },
+    "element": "Pyro",
+    "rarity": 4,
+    "avatar": "UI_AvatarIcon_Xiangling",
+    "filter": [
+      "element_pyro",
+      "weapon_polearm",
+      "monster_001",
+      "local_009",
+      "talent_005",
+      "elite_002"
+    ]
+  },
+  {
+    "name": "Beidou",
+    "names": {
+      "en": "Beidou",
+      "ru": "Бэй Доу"
+    },
+    "element": "Electro",
+    "rarity": 4,
+    "avatar": "UI_AvatarIcon_Beidou",
+    "filter": [
+      "element_electro",
+      "weapon_claymore",
+      "monster_011",
+      "local_010",
+      "talent_006",
+      "elite_003"
+    ]
+  },
+  {
+    "name": "Xingqiu",
+    "names": {
+      "en": "Xingqiu",
+      "ru": "Син Цю"
+    },
+    "element": "Hydro",
+    "rarity": 4,
+    "avatar": "UI_AvatarIcon_Xingqiu",
+    "filter": [
+      "element_hydro",
+      "weapon_sword",
+      "monster_002",
+      "local_011",
+      "talent_006",
+      "elite_004"
+    ]
+  },
+  {
+    "name": "Ningguang",
+    "names": {
+      "en": "Ningguang",
+      "ru": "Нин Гуан"
+    },
+    "element": "Geo",
+    "rarity": 4,
+    "avatar": "UI_AvatarIcon_Ningguang",
+    "filter": [
+      "element_geo",
+      "weapon_catalyst",
+      "monster_010",
+      "local_012",
+      "talent_004",
+      "elite_006"
+    ]
+  },
+  {
+    "name": "Fischl",
+    "names": {
+      "en": "Fischl",
+      "ru": "Фишль"
+    },
+    "element": "Electro",
+    "rarity": 4,
+    "avatar": "UI_AvatarIcon_Fischl",
+    "filter": [
+      "element_electro",
+      "weapon_bow",
+      "monster_004",
+      "local_007",
+      "talent_003",
+      "elite_006"
+    ]
+  },
+  {
+    "name": "Bennett",
+    "names": {
+      "en": "Bennett",
+      "ru": "Беннет"
+    },
+    "element": "Pyro",
+    "rarity": 4,
+    "avatar": "UI_AvatarIcon_Bennett",
+    "filter": [
+      "element_pyro",
+      "weapon_sword",
+      "monster_011",
+      "local_005",
+      "talent_002",
+      "elite_001"
+    ]
+  },
+  {
+    "name": "Noel",
+    "names": {
+      "en": "Noelle",
+      "ru": "Ноэлль"
+    },
+    "element": "Geo",
+    "rarity": 4,
+    "avatar": "UI_AvatarIcon_Noel",
+    "filter": [
+      "element_geo",
+      "weapon_claymore",
+      "monster_002",
+      "local_003",
+      "talent_002",
+      "elite_002"
+    ]
+  },
+  {
+    "name": "Chongyun",
+    "names": {
+      "en": "Chongyun",
+      "ru": "Чун Юнь"
+    },
+    "element": "Cryo",
+    "rarity": 4,
+    "avatar": "UI_AvatarIcon_Chongyun",
+    "filter": [
+      "element_cryo",
+      "weapon_claymore",
+      "monster_002",
+      "local_015",
+      "talent_005",
+      "elite_003"
+    ]
+  },
+  {
+    "name": "Sucrose",
+    "names": {
+      "en": "Sucrose",
+      "ru": "Сахароза"
+    },
+    "element": "Anemo",
+    "rarity": 4,
+    "avatar": "UI_AvatarIcon_Sucrose",
+    "filter": [
+      "element_anemo",
+      "weapon_catalyst",
+      "monster_012",
+      "local_005",
+      "talent_001",
+      "elite_006"
+    ]
+  },
+  {
+    "name": "Jinn",
+    "names": {
+      "en": "Jinn",
+      "ru": "Джинн"
+    },
+    "element": "Anemo",
+    "rarity": 5,
+    "avatar": "UI_AvatarIcon_Qin",
+    "filter": [
+      "element_anemo",
+      "weapon_sword",
+      "monster_002",
+      "local_008",
+      "talent_002",
+      "elite_001"
+    ]
+  },
+  {
+    "name": "Diluc",
+    "names": {
+      "en": "Diluc",
+      "ru": "Дилюк"
+    },
+    "element": "Pyro",
+    "rarity": 5,
+    "avatar": "UI_AvatarIcon_Diluc",
+    "filter": [
+      "element_pyro",
+      "weapon_claymore",
+      "monster_010",
+      "local_007",
+      "talent_002",
+      "elite_001"
+    ]
+  },
+  {
+    "name": "Qiqi",
+    "names": {
+      "en": "Qiqi",
+      "ru": "Ци Ци"
+    },
+    "element": "Cryo",
+    "rarity": 5,
+    "avatar": "UI_AvatarIcon_Qiqi",
+    "filter": [
+      "element_cryo",
+      "weapon_sword",
+      "monster_003",
+      "local_014",
+      "talent_004",
+      "elite_004"
+    ]
+  },
+  {
+    "name": "Mona",
+    "names": {
+      "en": "Mona",
+      "ru": "Мона"
+    },
+    "element": "Hydro",
+    "rarity": 5,
+    "avatar": "UI_AvatarIcon_Mona",
+    "filter": [
+      "element_hydro",
+      "weapon_catalyst",
+      "monster_012",
+      "local_006",
+      "talent_002",
+      "elite_005"
+    ]
+  },
+  {
+    "name": "Keqing",
+    "names": {
+      "en": "Keqing",
+      "ru": "Кэ Цин"
+    },
+    "element": "Electro",
+    "rarity": 5,
+    "avatar": "UI_AvatarIcon_Keqing",
+    "filter": [
+      "element_electro",
+      "weapon_sword",
+      "monster_012",
+      "local_015",
+      "talent_004",
+      "elite_005"
+    ]
+  },
+  {
+    "name": "Venti",
+    "names": {
+      "en": "Venti",
+      "ru": "Венти"
+    },
+    "element": "Anemo",
+    "rarity": 5,
+    "avatar": "UI_AvatarIcon_Venti",
+    "filter": [
+      "element_anemo",
+      "weapon_bow",
+      "monster_001",
+      "local_004",
+      "talent_003",
+      "elite_004"
+    ]
+  },
+  {
+    "name": "Klee",
+    "names": {
+      "en": "Klee",
+      "ru": "Кли"
+    },
+    "element": "Pyro",
+    "rarity": 5,
+    "avatar": "UI_AvatarIcon_Klee",
+    "filter": [
+      "element_pyro",
+      "weapon_catalyst",
+      "monster_003",
+      "local_006",
+      "talent_001",
+      "elite_005"
+    ]
+  },
+  {
+    "name": "Diona",
+    "names": {
+      "en": "Diona",
+      "ru": "Диона"
+    },
+    "element": "Cryo",
+    "rarity": 4,
+    "avatar": "UI_AvatarIcon_Diona",
+    "filter": [
+      "element_cryo",
+      "weapon_bow",
+      "monster_004",
+      "local_001",
+      "talent_001",
+      "elite_008"
+    ]
+  },
+  {
+    "name": "Tartaglia",
+    "names": {
+      "en": "Tartaglia",
+      "ru": "Тарталья"
+    },
+    "element": "Hydro",
+    "rarity": 5,
+    "avatar": "UI_AvatarIcon_Tartaglia",
+    "filter": [
+      "element_hydro",
+      "weapon_bow",
+      "monster_010",
+      "local_016",
+      "talent_001",
+      "elite_008"
+    ]
+  },
+  {
+    "name": "Xinyan",
+    "names": {
+      "en": "Xinyan",
+      "ru": "Синь Янь"
+    },
+    "element": "Pyro",
+    "rarity": 4,
+    "avatar": "UI_AvatarIcon_Xinyan",
+    "filter": [
+      "element_pyro",
+      "weapon_claymore",
+      "monster_011",
+      "local_014",
+      "talent_006",
+      "elite_007"
+    ]
+  },
+  {
+    "name": "Zhongli",
+    "names": {
+      "en": "Zhongli",
+      "ru": "Чжун Ли"
+    },
+    "element": "Geo",
+    "rarity": 5,
+    "avatar": "UI_AvatarIcon_Zhongli",
+    "filter": [
+      "element_geo",
+      "weapon_polearm",
+      "monster_001",
+      "local_015",
+      "talent_006",
+      "elite_007"
+    ]
+  },
+  {
+    "name": "Albedo",
+    "names": {
+      "en": "Albedo",
+      "ru": "Альбедо"
+    },
+    "element": "Geo",
+    "rarity": 5,
+    "avatar": "UI_AvatarIcon_Albedo",
+    "filter": [
+      "element_geo",
+      "weapon_sword",
+      "monster_003",
+      "local_004",
+      "talent_003",
+      "elite_007"
+    ]
+  },
+  {
+    "name": "Ganyu",
+    "names": {
+      "en": "Ganyu",
+      "ru": "Гань Юй"
+    },
+    "element": "Cryo",
+    "rarity": 5,
+    "avatar": "UI_AvatarIcon_Ganyu",
+    "filter": [
+      "element_cryo",
+      "weapon_bow",
+      "monster_012",
+      "local_013",
+      "talent_005",
+      "elite_009"
+    ]
+  },
+  {
+    "name": "Xiao",
+    "names": {
+      "en": "Xiao",
+      "ru": "Сяо"
+    },
+    "element": "Anemo",
+    "rarity": 5,
+    "avatar": "UI_AvatarIcon_Xiao",
+    "filter": [
+      "element_anemo",
+      "weapon_polearm",
+      "monster_001",
+      "local_013",
+      "talent_004",
+      "elite_009"
+    ]
+  },
+  {
+    "name": "Hu Tao",
+    "names": {
+      "en": "Hu Tao",
+      "ru": "Ху Тао"
+    },
+    "element": "Pyro",
+    "rarity": 0,
+    "avatar": "UI_AvatarIcon_Hu Tao_Temporary",
+    "filter": [
+      "element_pyro",
+      "weapon_polearm"
+    ]
+  },
+  {
+    "name": "Ayaka",
+    "names": {
+      "en": "Ayaka",
+      "ru": "Аяка"
+    },
+    "element": "Cryo",
+    "rarity": 0,
+    "avatar": "UI_AvatarIcon_Ayaka",
+    "filter": [
+      "element_cryo",
+      "weapon_sword"
+    ]
+  }
+]

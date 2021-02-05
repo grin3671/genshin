@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+  <script src="./js/axios.min.js"></script>
+  <style>
+    :root {
+      --c-text_primary: #f0f6fc;
+      --c-text_link: #58a6ff;
+
+      --c-bg_main: #1d1f29;
+      --c-bg_rarity4: #745d96;
+      --c-bg_rarity5: #9f7047;
+    }
+  </style>
+  <style>
+    body {
+      margin: 0;
+      background: var(--c-bg_main);
+      color: var(--c-text_primary);
+      font-family: 'Ubuntu', 'Vollkorn', 'Trebuchet MS', sans-serif;
+      line-height: 24px;
+      overflow: hidden;
+      overflow-y: scroll;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    @font-face {
+      font-family: 'Teyvat';
+      src:  url('font/teyvat/teyvat.eot?v1');
+      src:  url('font/teyvat/teyvat.eot?v1#iefix') format('embedded-opentype'),
+            url('font/teyvat/teyvat.ttf?v1') format('truetype'),
+            url('font/teyvat/teyvat.woff?v1') format('woff'),
+            url('font/teyvat/teyvat.svg?v1#teyvat') format('svg');
+      font-weight: normal;
+      font-style: normal;
+      font-display: block;
+    }
+
+    h1 {
+      margin: .5em 0;
+      font-family: 'Teyvat';
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 1.4;
+    }
+  </style>
+  <style id="style_layout">
+    .page-sidebar {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      max-width: 360px;
+      height: 100%;
+      background: #222431;
+      box-shadow: 0 1px 2px rgba(0,0,0,.24), 0 1px 3px rgba(0,0,0,.12);
+      transform: translate3d(100%,0,0);
+      will-change: transform;
+      z-index: 100;
+    }
+    .page-sidebar .sidebar-content {
+      padding: 16px 24px;
+    }
+    @media (min-width: 1280px) {
+      .page-sidebar {
+        order: 1;
+        position: relative;
+        width: auto;
+        max-width: none;
+        min-height: 100vh;
+        margin-right: 0;
+        transform: translate3d(0,0,0);
+      }
+      .page-sidebar .sidebar-content {
+        width: 376px;
+        padding: 24px 32px;
+      }
+    }
+
+    .page-content {
+      width: 100%;
+      max-width: 880px;
+      padding: 16px;
+      margin: 0 auto;
+    }
+    @media (min-width: 640px) {
+      .page-content {
+        padding: 16px 24px;
+      }
+    }
+    @media (min-width: 1280px) {
+      .page-content {
+        padding: 16px 32px;
+      }
+    }
+
+    @media (max-width: 799px) {
+      .page-content .filters-item {
+        width: 28px;
+        height: 28px;
+      }
+      .page-content .filters-item > img {
+        max-width: 32px;
+      }
+      .page-content .filters-item.filters-item--element > img {
+        max-width: 25px;
+        margin: auto;
+      }
+    }
+
+    .header-icon {
+      width: 48px;
+      height: 48px;
+      margin: 4px;
+      background: transparent;
+      border: none;
+      border-radius: 5px;
+      color: inherit;
+    }
+    .header-icon:first-child {
+      margin-right: 16px;
+    }
+    h1 + .header-icon {
+      margin-left: auto;
+    }
+    @media (min-width: 800px) {
+      .header-icon {
+        display: none;
+      }
+    }
+  </style>
+  <style id="style_cards">
+    .frame {
+      --frame-bg: #eff1f4;
+      display: block;
+      position: relative;
+      max-width: 132px;
+      margin: 3px 2px;
+      background-color: var(--frame-bg);
+      border: 2px solid var(--c-bg_main);
+      border-bottom: 0;
+      border-radius: 10px 10px 5px 5px;
+      color: #5b626b;
+      font-family: 'Teyvat';
+      font-size: 16px;
+      letter-spacing: -.3px;
+      line-height: 1.3;
+      text-decoration: none;
+      user-select: none;
+    }
+    .characters-list--sm .frame {
+      max-width: 68px;
+      border-width: 1px;
+      font-size: 11px;
+      line-height: 1.1;
+    }
+    .characters-list--md .frame {
+      max-width: 98px;
+      font-size: 14px;
+      line-height: 1.2;
+    }
+    .characters-list--xl .frame {
+      max-width: 256px;
+      border-width: 3px;
+      font-size: 22px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 799px) {
+      .characters-list--lg .frame {
+        max-width: 19%;
+        font-size: 14px;
+        line-height: 1.2;
+      }
+    }
+
+    @media (max-width: 479px) {
+      .characters-list--lg .frame {
+        max-width: 31.8%;
+        font-size: 14px;
+        line-height: 1.2;
+      }
+    }
+
+    .frame:hover,
+    .frame:focus,
+    .frame--selected {
+      /* --frame-bg: #d3bc8d; */
+      border-color: var(--frame-bg);
+      border-radius: 5px;
+      /* color: #fefdfb; */
+      /* text-shadow: 0 1px 3px #000; */
+      outline: none;
+      z-index: 1;
+    }
+
+
+    .frame::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: -1px -1px 0;
+      border-radius: 5px;
+      box-shadow: 0 0 6px 4px var(--frame-bg);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .frame--selected::before {
+      animation: frame-beat 1.6s linear infinite;
+    }
+
+    @keyframes frame-beat {
+      0% {
+        opacity: .3;
+      }
+      50% {
+        opacity: .9;
+      }
+      100% {
+        opacity: .3;
+      }
+    }
+
+
+    .frame_image {
+      vertical-align: top;
+      max-width: 100%;
+      background-size: 100%;
+      border-radius: 4px 4px 20% 0;
+      pointer-events: none;
+    }
+    .frame.r5 .frame_image {
+      background-image: url(./img/frame/bg/level_5_bg_s.1ff411a0.png);
+    }
+    .frame.r4 .frame_image {
+      background-image: url(./img/frame/bg/level_4_bg_s.7a6c5841.png);
+    }
+    .frame.r0 .frame_image {
+      background-image: url(./img/frame/bg/level_0_bg_s.png);
+    }
+
+    .frame_name {
+      display: block;
+      padding: 2px 4px;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .frame_element {
+      position: absolute;
+      width: 25%;
+      height: 0;
+      padding-top: 25%;
+      background-color: transparent;
+      background-position: center;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      /* filter: drop-shadow(0 3px 6px black); */
+    }
+    .frame_element.pyro {
+      background-image: url(./img/element/pyro.png);
+    }
+    .frame_element.hydro {
+      background-image: url(./img/element/hydro.png);
+    }
+    .frame_element.cryo {
+      background-image: url(./img/element/cryo.png);
+    }
+    .frame_element.electro {
+      background-image: url(./img/element/electro.png);
+    }
+    .frame_element.anemo {
+      background-image: url(./img/element/anemo.png);
+    }
+    .frame_element.geo {
+      background-image: url(./img/element/geo.png);
+    }
+  </style>
+  <style id="style_filters">
+    .filters-block {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 auto;
+    }
+    .filters-block + .filters-block {
+      margin-top: 1.75em;
+    }
+    .filters-header {
+      flex: 1 0 100%;
+      margin: 0 auto .75em;
+      font-family: 'Teyvat';
+      font-weight: normal;
+    }
+    .filters-list {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      padding: 4px;
+      margin: 0 -8px;
+      background: #1d1f29;
+      border-radius: 5px;
+    }
+    .filters-list .separator {
+      margin: 0 auto;
+    }
+    .filters-item {
+      --c-border: #ffb74d; /* #42a5f5 */
+      display: block;
+      position: relative;
+      width: 56px;
+      height: 56px;
+      padding: 0;
+      margin: 4px;
+      background: transparent;
+      background-size: 50px;
+      background-position: center;
+      background-repeat: no-repeat;
+      border: 0;
+      border-radius: 5px;
+      font-size: 0;
+    }
+    .filters-item.filters-item--weapon,
+    .filters-item.filters-item--talent {
+      background-size: 64px;
+    }
+    .filters-item:focus {
+      box-shadow: 0 0 0 2px #747474;
+      outline: none;
+    }
+    .filters-item:hover {
+      background-color: #36384a;
+    }
+    .filters-item.active {
+      box-shadow: 0 0 0 2px var(--c-border);
+    }
+    .filters-item > img {
+      max-width: 64px;
+      margin: -4px;
+      pointer-events: none;
+      opacity: .8;
+    }
+    .filters-item:hover > img,
+    .filters-item:focus > img,
+    .filters-item.active > img {
+      opacity: 1;
+    }
+    .filters-item.filters-item--element > img {
+      max-width: 50px;
+      margin: 3px;
+    }
+    .filters-item_name {
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 6px 14px;
+      background: #36384a;
+      border-radius: 5px;
+      color: #f0f6fc;
+      font-family: 'Ubuntu', 'Vollkorn', 'Trebuchet MS', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.5;
+      text-align: center;
+      white-space: nowrap;
+      pointer-events: none;
+      z-index: 99;
+    }
+    .filters-item_hint {
+      display: block;
+      color: #ffd780;
+      font-size: 12px;
+    }
+    .filters-item_hint--secondary {
+      color: #b9bcbe;
+    }
+    .filters-item:not(:hover) > .filters-item_name {
+      opacity: 0;
+    }
+  </style>
+  <style id="style_tables">
+    .table-data {
+      width: 100%;
+    }
+    .table-data td {
+      border: 1px solid gray;
+    }
+  </style>
+  <style id="style_divider">
+    .divider {
+      display: flex;
+      height: 16px;
+      align-items: center;
+      margin: 8px 0;
+      line-height: 1px;
+      opacity: .4;
+      user-select: none;
+    }
+    .divider::before,
+    .divider::after {
+      content: '✦';
+      flex: 1 0 auto;
+      height: 1px;
+      background: #979ec3;
+      margin: 0 8px 0 0;
+      font-size: 13px;
+      text-indent: -1px;
+    }
+    .divider::after {
+      direction: rtl;
+      margin: 0 0 0 8px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" style="display: flex; align-items: flex-start; position: relative; max-width: 1400px; margin: 0 auto;">
+    <div class="page-menu"></div>
+    <div id="content" class="page-content">
+      <div>
+        <header style="display: flex;">
+          <button class="header-icon">=</button>
+          <h1>Персонажи</h1>
+          <button class="header-icon">=</button>
+        </header>
+      </div>
+      <div class="characters-list" :class="{ 'characters-list--xl': settings.grid_size == 'xl', 'characters-list--lg': settings.grid_size == 'lg', 'characters-list--md': settings.grid_size == 'md', 'characters-list--sm': settings.grid_size == 'sm' }" style="display: flex; align-items: flex-start; flex-wrap: wrap;">
+        <vue-character v-for="c in chara" :c="c" :selected="_selectedCharacter" :key="c.name" @click="setCurrentCharacter"></vue-character>
+      </div>
+    </div>
+    <div id="sidebar" class="page-sidebar sidebar js-sticky">
+      <div class="sidebar-content">
+        <template v-if="loading.filters">
+          <div class="filters-block">
+            <h4 class="filters-header">Элемент</h4>
+            <div class="filters-list">
+              <vue-filter
+                v-for="filter in filters_element"
+                :filter="filter"
+                :selecter_character="filters_selectedCharacter"
+                :key="filter.id"
+                :class="{ active: settings.filters.includes(filter.id) }"
+                @click="toggleFilter"
+                class="filters-item--element"
+              ></vue-filter>
+            </div>
+          </div>
+          <div class="filters-block">
+            <h4 class="filters-header">Оружие</h4>
+            <div class="filters-list">
+              <vue-filter
+                v-for="filter in filters_weapon"
+                :filter="filter"
+                :selecter_character="filters_selectedCharacter"
+                :key="filter.id"
+                :class="{ active: settings.filters.includes(filter.id) }"
+                @click="toggleFilter"
+              ></vue-filter>
+            </div>
+          </div>
+          <div class="filters-block">
+            <h4 class="filters-header">Возвышение: монстры</h4>
+            <div class="filters-list">
+              <vue-filter
+                v-for="filter in filters_monster"
+                :filter="filter"
+                :selecter_character="filters_selectedCharacter"
+                :key="filter.id"
+                :class="{ active: settings.filters.includes(filter.id) }"
+                @click="toggleFilter"
+              ></vue-filter>
+            </div>
+          </div>
+          <!-- <div class="filters-block">
+            <h4 class="filters-header">Оружие: элитные монстры</h4>
+            <div class="filters-list">
+              <vue-filter
+                v-for="filter in filters_elite"
+                :filter="filter"
+                :selecter_character="filters_selectedCharacter"
+                :key="filter.id"
+                :class="{ active: settings.filters.includes(filter.id) }"
+                @click="toggleFilter"
+              ></vue-filter>
+            </div>
+          </div> -->
+          <div class="filters-block">
+            <h4 class="filters-header">Возвышение: диковинки</h4>
+            <div class="filters-list">
+              <vue-filter
+                v-for="filter in filters_local"
+                :filter="filter"
+                :selecter_character="filters_selectedCharacter"
+                :key="filter.id"
+                :class="{ active: settings.filters.includes(filter.id) }"
+                @click="toggleFilter"
+              ></vue-filter>
+            </div>
+          </div>
+          <div class="filters-block">
+            <h4 class="filters-header">Таланты: подземелья</h4>
+            <div class="filters-list">
+              <vue-filter
+                v-for="filter in filters_talent"
+                :filter="filter"
+                :selecter_character="filters_selectedCharacter"
+                :key="filter.id"
+                :class="{ active: settings.filters.includes(filter.id) }"
+                @click="toggleFilter"
+              ></vue-filter>
+            </div>
+          </div>
+          <div class="filters-block">
+            <h4 class="filters-header">Таланты: боссы</h4>
+            <div class="filters-list">
+              <vue-filter
+                v-for="filter in filters_boss"
+                :filter="filter"
+                :selecter_character="filters_selectedCharacter"
+                :key="filter.id"
+                :class="{ active: settings.filters.includes(filter.id) }"
+                @click="toggleFilter"
+              ></vue-filter>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <script>
+    Vue.component('vue-character', {
+      props: ['c', 'selected'],
+      computed: {
+        name: function () {
+          return this.c.names ? this.c.names[this.$root.settings.lang] : this.c.name;
+        },
+        element: function () {
+          let str = 'element_';
+          let cat = this.c.filter.filter(e => e.includes(str)).toString();
+          return cat.substring(cat.indexOf(str) + str.length);
+        },
+        rarity: function () {
+          return 'r' + this.c.rarity;
+        },
+        isSelected: function () {
+          return this.c.name === this.selected;
+        },
+        classObject: function () {
+          return {
+            "frame--selected": this.isSelected,
+            "r0": this.c.rarity == 0,
+            "r4": this.c.rarity == 4,
+            "r5": this.c.rarity == 5,
+          }
+        }
+      },
+      template: '<a :href="\'#\' + c.name" class="frame" :class="classObject"  @click="$emit(\'click\', c.name)">' +
+                  '<span class="frame_element" :class="element" :data-tooltip="element"></span>' +
+                  '<img class="frame_image" :src="\'./img/character/\' + c.avatar + \'.png\'">' +
+                  '<span class="frame_name">{{ name }}</span>' +
+                '</a>',
+    });
+
+
+
+    Vue.component('vue-filter', {
+      props: ['filter', 'selecter_character'],
+      computed: {
+        name: function () {
+          return this.filter.names ? this.filter.names[this.$root.settings.lang] : this.filter.id;
+        },
+        hints: function () {
+          return this.filter.hints ? this.filter.hints[this.$root.settings.lang].split(';') : [];
+        },
+        characterFilter: function () {
+          return this.selecter_character ? this.selecter_character.includes(this.filter.id) : false;
+        }
+      },
+      template: '<button class="filters-item" @click="$emit(\'click\', filter.id)" :class="{ active: characterFilter }">' +
+                  '<img class="filters-item_image" :src="filter.icon" :alt="name">' +
+                  '<span class="filters-item_name">' +
+                    '<span>{{ name }}</span>' +
+                    '<span class="filters-item_hint" v-if="hints[0]">{{ hints[0] }}</span>' +
+                    '<span class="filters-item_hint filters-item_hint--secondary" v-if="hints[1]">{{ hints[1] }}</span>' +
+                  '</span>' +
+                '</button>',
+    });
+
+
+
+    Vue.component('divider', {
+      template: '<div class="divider" aria-hidden="true">' +
+                  '<span>✦</span>' +
+                '</div>',
+    });
+
+
+
+    var app = new Vue({
+      el: '#app',
+      data: {
+        settings: {
+          langs: ['en', 'ru'],
+          lang: 'ru',
+          filters: [],
+          character: '',
+          grid_size: 'lg',
+          sort: {
+            param1: 'default',
+            asc: true
+          },
+          vue_filters: []
+        },
+        loading: {
+          filters: false,
+          characters: false,
+        },
+        characters: [],
+        filters: []
+      },
+      computed: {
+        chara: function () {
+          // this.characters.filter(c => !(c.name.includes('Traveller') || c.rarity == 0)).sort(this._characters_sort)
+          return this.settings.filters.length > 0 ? this.characters.filter(this._characters_filter) : this.characters.sort(this._characters_sort);
+        },
+        filters_element: function () {
+          return this.filters.filter(e => e.category == 'element');
+        },
+        filters_weapon: function () {
+          return this.filters.filter(e => e.category == 'weapon');
+        },
+        filters_monster: function () {
+          return this.filters.filter(e => {
+            return (e.category == 'monster' && !e.subcategory)
+          });
+        },
+        filters_elite: function () {
+          return this.filters.filter(e => {
+            return (e.category == 'monster' && e.subcategory)
+          });
+        },
+        filters_boss: function () {
+          return this.filters.filter(e => e.category == 'boss');
+        },
+        filters_talent: function () {
+          return this.filters.filter(e => e.category == 'talent');
+        },
+        filters_local: function () {
+          return this.filters.filter(e => e.category == 'local');
+        },
+        filters_selectedCharacter: function () {
+          let selectedCharacter = this.characters.filter(item => item.name == this._selectedCharacter);
+          return (selectedCharacter[0] && this.settings.filters.length == 0) ? selectedCharacter[0].filter : undefined;
+        },
+        _selectedCharacter: function () {
+          return (this.settings.filters.length == 0) ? this.settings.character : undefined;
+        },
+      },
+      methods: {
+        setGridSize: function (size) {
+          this.settings.grid_size = size;
+        },
+        setCharactersSort: function (sort) {
+          this.settings.sort.param1 = sort;
+        },
+        setCurrentCharacter: function (character) {
+          event.preventDefault();
+          history.pushState('', '', this.settings.character ? location.pathname : location.pathname + '#' + character);
+          this.settings.character = this.settings.character == character ? '' : character;
+        },
+        toggleFilter: function (filter) {
+          let arr, cat, same, i = -1;
+          arr = this.settings.filters;
+          // Определяем категорию нового фильтра
+          cat = filter.substring(0, filter.indexOf('_'));
+          // Объодим текущие фильтры в поисках категории
+          arr.filter((value, index) => {
+            // Если в названии одного из текущих фильтров есть категория, то 
+            if (value.indexOf(cat) >= 0)  {
+              // Запоминаем индекс категории
+              i = index;
+              // Отмечаем, если это один и тот же фильтр
+              same = value == filter;
+            }
+          });
+          return i >= 0 ? same ? arr.splice(i, 1) : arr.splice(i, 1, filter) : arr.splice(arr.length, 0, filter);
+        },
+        addFilter: function (filter) {
+          let arr, i;
+          arr = this.settings.filters;
+          i = arr.indexOf(filter);
+          return i >= 0 ? arr.splice(i, 1) : arr.splice(arr.length, 0, filter);
+        },
+        _characters_sort: function (a, b) {
+          let param = this.settings.sort.param1,
+              asc = this.settings.sort.asc,
+              lang;
+          switch (this.settings.sort.param1) {
+            case 'rarity':
+              return asc ? b[param] - a[param] : a[param] - b[param];
+              break;
+
+            case 'alphabet':
+              lang = this.settings.lang;
+              return asc ? a.names[lang].localeCompare(b.names[lang]) : b.names[lang].localeCompare(a.names[lang]);
+              break;
+          
+            default:
+              return a - b;
+              break;
+          }
+        },
+        _characters_filter: function (element) {
+          return element.filter ? this.settings.filters.every(item => element.filter.includes(item)) : false; // AND filter
+          // return element.filter ? element.filter.some(item => this.settings.filters.includes(item)) : false; // OR filter
+        },
+      },
+      created: function () {
+        axios.get("./data/filters.json")
+          .then(response => {
+            this.filters = response.data;
+            this.loading.filters = true;
+
+            setTimeout(function () {
+              new stickySidebar('#sidebar', { minScreenWidth: 1280 });
+            }, 1000);
+          });
+        axios.get("./data/characters.json")
+          .then(response => {
+            console.log("response", response.data);
+            this.characters = response.data;
+            this.loading.characters = true;
+
+            let hash;
+            hash = location.hash.substring(1);
+            this.settings.character = hash ? this.characters.filter(c => c.name == hash) ? this.characters.filter(c => c.name == hash)[0].name : '' : '';
+
+            setTimeout(function () {
+              new stickySidebar('#content', { minScreenWidth: 1280 });
+            }, 1000);
+          });
+
+      }
+    });
+
+
+
+
+
+    // STICKY ELEMENTS
+    function stickySidebar(selector, params) {
+      // Заменить!!
+      let sticky_elem, sticky_size, scroll_offset, scroll_dir, scrollTopStatus = 0, scrollBottomStatus = 0;
+
+      // Изначальные параметры ТОЛЬКО ТЕ ПАРАМЕТРЫ, КОТОРЫЕ МОГУТ БЫТЬ ВХОДЯЩИМИ
+      let settings = {
+        elem: undefined,
+        stickyTop: 0, // Прилипание по умолчанию к верху экрана
+        topOffset: 0, // Расстояние от начала экрана
+        height: 0, // Размер элемента
+        gapSizes: 0, // Разница между размером элемента и размером экрана
+        scrollBottom: 0, // Расстояние от начала экрана до конца элемента
+        status: null, // Если экран больше элемента, то элемент прокручивается, если нет — прилипает к верху экрана
+        stopEvent: false,
+        minScreenWidth: 0
+      };
+
+      // Добавление входных параметров
+      settings = { ...settings, ...params };
+
+      // Запуск функции с this
+      newCalcSizes.call(settings);
+
+      sticky_elem = settings.elem ? settings.elem : document.querySelector(selector);
+      calcSizes();
+      document.addEventListener('scroll', stickyScroll);
+      window.addEventListener('resize', calcSizes);
+
+      function newCalcSizes () {
+        this.elem = this.elem ? this.elem : document.querySelector(selector);
+        this.rect = this.elem.getBoundingClientRect();
+        this.topOffset = this.rect.top + pageYOffset;
+        this.scrollBottom = this.rect.bottom + pageYOffset;
+        this.height = this.elem.scrollHeight;
+        console.log(this);
+      }
+
+      function calcSizes() {
+        settings.stopEvent = innerWidth < settings.minScreenWidth;
+        scroll_offset = pageYOffset;
+        let w_size = innerHeight;
+        let e_size = sticky_elem.scrollHeight;
+        let gap = w_size - e_size;
+        let status = gap >= 0 ? 'sticky' : 'between';
+        let clientHeight = document.body.clientHeight;
+        sticky_size = {
+          vh: w_size,
+          eh: e_size,
+          gap: gap * -1,
+          status: status,
+          clientHeight: clientHeight
+        }
+
+        if (settings.stopEvent) {
+          sticky_elem.style.position = '';
+          sticky_elem.style.top = '';
+          sticky_elem.style.transform = '';
+        }
+      }
+
+      function stickyScroll(event) {
+        // Close event if screen smaller than listed size
+        if (settings.stopEvent) return false;
+
+        scroll_dir = pageYOffset > scroll_offset ? 'bottom' : 'top';
+        scroll_offset = pageYOffset;
+
+        switch (sticky_size.status) {
+          case 'between':
+            sticky_elem.style.position = '';
+
+            if (pageYOffset > scrollBottomStatus + sticky_size.gap && scroll_dir == 'bottom') {
+              scrollTopStatus = pageYOffset - sticky_size.gap;
+              sticky_elem.style.transform = 'translate3d(0, ' + scrollTopStatus + 'px, 0)';
+            }
+
+            if (pageYOffset < scrollTopStatus && scroll_dir == 'top') {
+              scrollBottomStatus = pageYOffset;
+              sticky_elem.style.transform = 'translate3d(0, ' + pageYOffset + 'px, 0)';
+            }
+            break;
+
+          case 'sticky':
+            sticky_elem.style.position = 'sticky';
+            sticky_elem.style.top = 0;
+            sticky_elem.style.transform = '';
+            break;
+        }
+      }
+
+      return sticky_elem;
+    }
+  </script>
+</body>
+</html>

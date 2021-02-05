@@ -1,0 +1,688 @@
+[
+  {
+    "id": "element_pyro",
+    "category": "element",
+    "names": {
+      "en": "Pyro",
+      "ru": "Пиро"
+    },
+    "icon": "./img/element/pyro_w.png"
+  },
+  {
+    "id": "element_hydro",
+    "category": "element",
+    "names": {
+      "en": "Hydro",
+      "ru": "Гидро"
+    },
+    "icon": "./img/element/hydro_w.png"
+  },
+  {
+    "id": "element_anemo",
+    "category": "element",
+    "names": {
+      "en": "Anemo",
+      "ru": "Анемо"
+    },
+    "icon": "./img/element/anemo_w.png"
+  },
+  {
+    "id": "element_electro",
+    "category": "element",
+    "names": {
+      "en": "Electro",
+      "ru": "Электро"
+    },
+    "icon": "./img/element/electro_w.png"
+  },
+  {
+    "id": "element_dendro",
+    "category": "element",
+    "names": {
+      "en": "Dendro",
+      "ru": "Дендро"
+    },
+    "icon": "./img/element/dendro_w.png"
+  },
+  {
+    "id": "element_cryo",
+    "category": "element",
+    "names": {
+      "en": "Cryo",
+      "ru": "Крио"
+    },
+    "icon": "./img/element/cryo_w.png"
+  },
+  {
+    "id": "element_geo",
+    "category": "element",
+    "names": {
+      "en": "Geo",
+      "ru": "Гео"
+    },
+    "icon": "./img/element/geo_w.png"
+  },
+  {
+    "id": "weapon_sword",
+    "category": "weapon",
+    "names": {
+      "en": "Sword",
+      "ru": "Одноручное"
+    },
+    "icon": "./img/weapon/01.png"
+  },
+  {
+    "id": "weapon_claymore",
+    "category": "weapon",
+    "names": {
+      "en": "Claymore",
+      "ru": "Двуручное"
+    },
+    "icon": "./img/weapon/02.png"
+  },
+  {
+    "id": "weapon_bow",
+    "category": "weapon",
+    "names": {
+      "en": "Bow",
+      "ru": "Стрелковое"
+    },
+    "icon": "./img/weapon/04.png"
+  },
+  {
+    "id": "weapon_polearm",
+    "category": "weapon",
+    "names": {
+      "en": "Polearm",
+      "ru": "Древковое"
+    },
+    "icon": "./img/weapon/05.png"
+  },
+  {
+    "id": "weapon_catalyst",
+    "category": "weapon",
+    "names": {
+      "en": "Catalyst",
+      "ru": "Катализатор"
+    },
+    "icon": "./img/weapon/03.png"
+  },
+  {
+    "id": "local_001",
+    "category": "local",
+    "names": {
+      "en": "Calla Lily",
+      "ru": "Лилия калла"
+    },
+    "hints": {
+      "en": "Mondstadt",
+      "ru": "Мондштадт"
+    },
+    "icon": "./img/item/material/local/0101.png"
+  },
+  {
+    "id": "local_002",
+    "category": "local",
+    "names": {
+      "en": "Wolfhook",
+      "ru": "Волчий крюк"
+    },
+    "hints": {
+      "en": "Mondstadt",
+      "ru": "Мондштадт"
+    },
+    "icon": "./img/item/material/local/0102.png"
+  },
+  {
+    "id": "local_003",
+    "category": "local",
+    "names": {
+      "en": "Valberry",
+      "ru": "Валяшка"
+    },
+    "hints": {
+      "en": "Mondstadt",
+      "ru": "Мондштадт"
+    },
+    "icon": "./img/item/material/local/0103.png"
+  },
+  {
+    "id": "local_004",
+    "category": "local",
+    "names": {
+      "en": "Cecilia",
+      "ru": "Сесилия"
+    },
+    "hints": {
+      "en": "Mondstadt",
+      "ru": "Мондштадт"
+    },
+    "icon": "./img/item/material/local/0104.png"
+  },
+  {
+    "id": "local_005",
+    "category": "local",
+    "names": {
+      "en": "Windwheel Aster",
+      "ru": "Ветряная астра"
+    },
+    "hints": {
+      "en": "Mondstadt",
+      "ru": "Мондштадт"
+    },
+    "icon": "./img/item/material/local/0105.png"
+  },
+  {
+    "id": "local_006",
+    "category": "local",
+    "names": {
+      "en": "Philanemo Mushroom",
+      "ru": "Гриб филанемо"
+    },
+    "hints": {
+      "en": "Mondstadt",
+      "ru": "Мондштадт"
+    },
+    "icon": "./img/item/material/local/0106.png"
+  },
+  {
+    "id": "local_007",
+    "category": "local",
+    "names": {
+      "en": "Small Lamp Grass",
+      "ru": "Трава-светяшка"
+    },
+    "hints": {
+      "en": "Mondstadt",
+      "ru": "Мондштадт"
+    },
+    "icon": "./img/item/material/local/0107.png"
+  },
+  {
+    "id": "local_008",
+    "category": "local",
+    "names": {
+      "en": "Dandelion Seed",
+      "ru": "Семена одуванчика"
+    },
+    "hints": {
+      "en": "Mondstadt",
+      "ru": "Мондштадт"
+    },
+    "icon": "./img/item/material/local/0108.png"
+  },
+  {
+    "id": "local_009",
+    "category": "local",
+    "names": {
+      "en": "Jueyun Chili",
+      "ru": "Заоблачный перчик"
+    },
+    "hints": {
+      "en": "Liyue",
+      "ru": "Ли Юэ"
+    },
+    "icon": "./img/item/material/local/0201.png"
+  },
+  {
+    "id": "local_010",
+    "category": "local",
+    "names": {
+      "en": "Noctilucous Jade",
+      "ru": "Полуночный нефрит"
+    },
+    "hints": {
+      "en": "Liyue",
+      "ru": "Ли Юэ"
+    },
+    "icon": "./img/item/material/local/0202.png"
+  },
+  {
+    "id": "local_011",
+    "category": "local",
+    "names": {
+      "en": "Silk Flower",
+      "ru": "Шелковица"
+    },
+    "hints": {
+      "en": "Liyue",
+      "ru": "Ли Юэ"
+    },
+    "icon": "./img/item/material/local/0203.png"
+  },
+  {
+    "id": "local_012",
+    "category": "local",
+    "names": {
+      "en": "Glaze Lily",
+      "ru": "Глазурная лилия"
+    },
+    "hints": {
+      "en": "Liyue",
+      "ru": "Ли Юэ"
+    },
+    "icon": "./img/item/material/local/0204.png"
+  },
+  {
+    "id": "local_013",
+    "category": "local",
+    "names": {
+      "en": "Qingxin",
+      "ru": "Цветок цинсинь"
+    },
+    "hints": {
+      "en": "Liyue",
+      "ru": "Ли Юэ"
+    },
+    "icon": "./img/item/material/local/0205.png"
+  },
+  {
+    "id": "local_014",
+    "category": "local",
+    "names": {
+      "en": "Violetgrass",
+      "ru": "Стеклянные колокольчики"
+    },
+    "hints": {
+      "en": "Liyue",
+      "ru": "Ли Юэ"
+    },
+    "icon": "./img/item/material/local/0206.png"
+  },
+  {
+    "id": "local_015",
+    "category": "local",
+    "names": {
+      "en": "Cor Lapis",
+      "ru": "Кор ляпис"
+    },
+    "hints": {
+      "en": "Liyue",
+      "ru": "Ли Юэ"
+    },
+    "icon": "./img/item/material/local/0207.png"
+  },
+  {
+    "id": "local_016",
+    "category": "local",
+    "names": {
+      "en": "Starconch",
+      "ru": "Звёздная ракушка"
+    },
+    "hints": {
+      "en": "Liyue",
+      "ru": "Ли Юэ"
+    },
+    "icon": "./img/item/material/local/0208.png"
+  },
+  {
+    "id": "monster_001",
+    "category": "monster",
+    "names": {
+      "en": "Slime Secretions",
+      "ru": "Выделения слайма"
+    },
+    "hints": {
+      "en": "Slime",
+      "ru": "Слаймы"
+    },
+    "icon": "./img/item/material/common/001_2.png"
+  },
+  {
+    "id": "monster_002",
+    "category": "monster",
+    "names": {
+      "en": "Stained Mask",
+      "ru": "Грязная маска"
+    },
+    "hints": {
+      "en": "Hilichurls",
+      "ru": "Хиличурлы"
+    },
+    "icon": "./img/item/material/common/002_2.png"
+  },
+  {
+    "id": "monster_003",
+    "category": "monster",
+    "names": {
+      "en": "Sealed Scroll",
+      "ru": "Свиток печати"
+    },
+    "hints": {
+      "en": "Samachurls",
+      "ru": "Шамачурлы"
+    },
+    "icon": "./img/item/material/common/003_2.png"
+  },
+  {
+    "id": "monster_004",
+    "category": "monster",
+    "names": {
+      "en": "Sharp Arrowhead",
+      "ru": "Острый наконечник стрелы"
+    },
+    "hints": {
+      "en": "Hilichurl Shooters",
+      "ru": "Хиличурлы-стрелки"
+    },
+    "icon": "./img/item/material/common/004_2.png"
+  },
+  {
+    "id": "monster_005",
+    "category": "monster",
+    "subcategory": "Elite",
+    "names": {
+      "en": "Heavy Horn",
+      "ru": "Тяжёлый рог"
+    },
+    "hints": {
+      "en": "Mitachurls, Lawachurls",
+      "ru": "Большие хиличурлы"
+    },
+    "icon": "./img/item/material/common/005_2.png"
+  },
+  {
+    "id": "monster_006",
+    "category": "monster",
+    "subcategory": "Elite",
+    "names": {
+      "en": "Dead Ley Line Branch",
+      "ru": "Ветви артерий земли"
+    },
+    "hints": {
+      "en": "Abyss Mages",
+      "ru": "Маги бездны"
+    },
+    "icon": "./img/item/material/common/006_2.png"
+  },
+  {
+    "id": "monster_007",
+    "category": "monster",
+    "subcategory": "Elite",
+    "names": {
+      "en": "Chaos Device",
+      "ru": "Устройство Хаоса"
+    },
+    "hints": {
+      "en": "Ruin Guard, Ruin Hunter",
+      "ru": "Стражи руин, Руинные охотники"
+    },
+    "icon": "./img/item/material/common/007_2.png"
+  },
+  {
+    "id": "monster_008",
+    "category": "monster",
+    "subcategory": "Elite",
+    "names": {
+      "en": "Mist Grass Pollen",
+      "ru": "Пыльца туманного цветка"
+    },
+    "hints": {
+      "en": "Fatui Cicin Mage",
+      "ru": "Маги Электро цицинов"
+    },
+    "icon": "./img/item/material/common/008_2.png"
+  },
+  {
+    "id": "monster_009",
+    "category": "monster",
+    "subcategory": "Elite",
+    "names": {
+      "en": "Hunter's Sacrificial Knife",
+      "ru": "Церемониальный нож охотника"
+    },
+    "hints": {
+      "en": "Fatui Agent",
+      "ru": "Агенты Фатуи"
+    },
+    "icon": "./img/item/material/common/009_2.png"
+  },
+  {
+    "id": "monster_010",
+    "category": "monster",
+    "names": {
+      "en": "Sergeant's Insignia",
+      "ru": "Шеврон сержанта"
+    },
+    "hints": {
+      "en": "Fatui Skirmishers",
+      "ru": "Застрельщики Фатуи"
+    },
+    "icon": "./img/item/material/common/010_2.png"
+  },
+  {
+    "id": "monster_011",
+    "category": "monster",
+    "names": {
+      "en": "Silver Raven Insignia",
+      "ru": "Печать серебряного ворона"
+    },
+    "hints": {
+      "en": "Treasure Hoarders",
+      "ru": "«Похитители сокровищ»"
+    },
+    "icon": "./img/item/material/common/011_2.png"
+  },
+  {
+    "id": "monster_012",
+    "category": "monster",
+    "names": {
+      "en": "Shimmering Nectar",
+      "ru": "Мерцающий нектар"
+    },
+    "hints": {
+      "en": "Whopperflowers",
+      "ru": "Попрыгуньи"
+    },
+    "icon": "./img/item/material/common/012_2.png"
+  },
+  {
+    "id": "monster_013",
+    "category": "monster",
+    "subcategory": "Elite",
+    "names": {
+      "en": "Fragile Bone Shard",
+      "ru": "Хрупкие останки"
+    },
+    "hints": {
+      "en": "Geovishap Hatchling",
+      "ru": "Детёныши Гео вишапа"
+    },
+    "icon": "./img/item/material/common/013_2.png"
+  },
+  {
+    "id": "talent_001",
+    "category": "talent",
+    "names": {
+      "en": "Freedom",
+      "ru": "Свобода"
+    },
+    "hints": {
+      "en": "Mondstadt;Mon/Thu/Sun",
+      "ru": "Мондштадт;Пн/Чт/Вс"
+    },
+    "icon": "./img/item/material/talent/012.png"
+  },
+  {
+    "id": "talent_002",
+    "category": "talent",
+    "names": {
+      "en": "Resistance",
+      "ru": "Борьба"
+    },
+    "hints": {
+      "en": "Mondstadt;Tue/Fri/Sun",
+      "ru": "Мондштадт;Вт/Пт/Вс"
+    },
+    "icon": "./img/item/material/talent/022.png"
+  },
+  {
+    "id": "talent_003",
+    "category": "talent",
+    "names": {
+      "en": "Ballad",
+      "ru": "Поэзия"
+    },
+    "hints": {
+      "en": "Mondstadt;Wed/Sat/Sun",
+      "ru": "Мондштадт;Ср/Сб/Вс"
+    },
+    "icon": "./img/item/material/talent/032.png"
+  },
+  {
+    "id": "talent_004",
+    "category": "talent",
+    "names": {
+      "en": "Prosperity",
+      "ru": "Процветание"
+    },
+    "hints": {
+      "en": "Liyue;Mon/Thu/Sun",
+      "ru": "Ли Юэ;Пн/Чт/Вс"
+    },
+    "icon": "./img/item/material/talent/042.png"
+  },
+  {
+    "id": "talent_005",
+    "category": "talent",
+    "names": {
+      "en": "Diligence",
+      "ru": "Усердие"
+    },
+    "hints": {
+      "en": "Liyue;Tue/Fri/Sun",
+      "ru": "Ли Юэ;Вт/Пт/Вс"
+    },
+    "icon": "./img/item/material/talent/052.png"
+  },
+  {
+    "id": "talent_006",
+    "category": "talent",
+    "names": {
+      "en": "Gold",
+      "ru": "Золото"
+    },
+    "hints": {
+      "en": "Liyue;Wed/Sat/Sun",
+      "ru": "Ли Юэ;Ср/Сб/Вс"
+    },
+    "icon": "./img/item/material/talent/062.png"
+  },
+  {
+    "id": "elite_001",
+    "category": "boss",
+    "names": {
+      "en": "Dvalin's Plume",
+      "ru": "Перо с хвоста Двалина"
+    },
+    "hints": {
+      "en": "Dvalin",
+      "ru": "Логово Ужаса Бури;Двалин 70+"
+    },
+    "icon": "./img/item/material/boss/011.png"
+  },
+  {
+    "id": "elite_002",
+    "category": "boss",
+    "names": {
+      "en": "Dvalin's Claw",
+      "ru": "Коготь Двалина"
+    },
+    "hints": {
+      "en": "Dvalin",
+      "ru": "Логово Ужаса Бури;Двалин 70+"
+    },
+    "icon": "./img/item/material/boss/012.png"
+  },
+  {
+    "id": "elite_003",
+    "category": "boss",
+    "names": {
+      "en": "Dvalin's Sigh",
+      "ru": "Вздох Двалина"
+    },
+    "hints": {
+      "en": "Dvalin",
+      "ru": "Логово Ужаса Бури;Двалин 70+"
+    },
+    "icon": "./img/item/material/boss/013.png"
+  },
+  {
+    "id": "elite_004",
+    "category": "boss",
+    "names": {
+      "en": "Tail of Boreas",
+      "ru": "Хвост Борея"
+    },
+    "hints": {
+      "en": "Andrius",
+      "ru": "Нагорье Ревущих ветров, Мондштадт;Лупус Бореалис 70+"
+    },
+    "icon": "./img/item/material/boss/021.png"
+  },
+  {
+    "id": "elite_005",
+    "category": "boss",
+    "names": {
+      "en": "Ring of Boreas",
+      "ru": "Кольцо Борея"
+    },
+    "hints": {
+      "en": "Andrius",
+      "ru": "Нагорье Ревущих ветров, Мондштадт;Лупус Бореалис 70+"
+    },
+    "icon": "./img/item/material/boss/022.png"
+  },
+  {
+    "id": "elite_006",
+    "category": "boss",
+    "names": {
+      "en": "Spirit Locket of Boreas",
+      "ru": "Шкатулка с Духом Борея"
+    },
+    "hints": {
+      "en": "Andrius",
+      "ru": "Нагорье Ревущих ветров, Мондштадт;Лупус Бореалис 70+"
+    },
+    "icon": "./img/item/material/boss/023.png"
+  },
+  {
+    "id": "elite_007",
+    "category": "boss",
+    "names": {
+      "en": "Tusk of Monoceros Caeli",
+      "ru": "Рог небесного кита"
+    },
+    "hints": {
+      "en": "Childe",
+      "ru": "Золотая палата;Чайльд 70+"
+    },
+    "icon": "./img/item/material/boss/031.png"
+  },
+  {
+    "id": "elite_008",
+    "category": "boss",
+    "names": {
+      "en": "Shard of a Foul Legacy",
+      "ru": "Осколок дьявольского меча"
+    },
+    "hints": {
+      "en": "Childe",
+      "ru": "Золотая палата;Чайльд 70+"
+    },
+    "icon": "./img/item/material/boss/032.png"
+  },
+  {
+    "id": "elite_009",
+    "category": "boss",
+    "names": {
+      "en": "Shadow of the Warrior",
+      "ru": "Тень воина"
+    },
+    "hints": {
+      "en": "Childe",
+      "ru": "Золотая палата;Чайльд 70+"
+    },
+    "icon": "./img/item/material/boss/033.png"
+  }
+]
