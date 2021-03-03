@@ -544,11 +544,13 @@
       "ru": "Ху Тао"
     },
     "element": "Pyro",
-    "rarity": 0,
+    "rarity": 5,
     "avatar": "UI_AvatarIcon_Hu Tao_Temporary",
     "filter": [
       "element_pyro",
-      "weapon_polearm"
+      "weapon_polearm",
+      "monster_012",
+      "local_011"
     ]
   },
   {
